@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+
+recursive-include wagtailcomments/templates *
+recursive-include wagtailcomments/static *

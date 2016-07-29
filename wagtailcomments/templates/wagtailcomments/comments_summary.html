@@ -1,0 +1,11 @@
+{% load i18n wagtailadmin_tags %}
+
+<li class="icon icon-doc-full-inverse">
+    <a href="{{ url }}">
+    {% blocktrans count counter=total_unmoderated_comments with total_unmoderated_comments|intcomma as total %}
+        <span>{{ total }}</span> Unmoderated comment
+    {% plural %}
+        <span>{{ total }}</span> Unmoderated comments
+    {% endblocktrans %}
+    </a>
+</li>
