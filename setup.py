@@ -8,9 +8,13 @@ from setuptools import find_packages, setup
 with open('README.rst', 'r') as f:
     readme = f.read()
 
+with open('wagtailcomments/_version.py', 'r') as f:
+    version = None
+    exec(f.read())
+
 setup(
     name='wagtailcomments',
-    version='0.1.0',
+    version=version,
     description="",
     long_description=readme,
     author='Takeflight',
