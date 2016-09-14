@@ -3,13 +3,15 @@ from django.contrib.contenttypes.models import ContentType
 from django.utils import timezone
 from django.utils.crypto import constant_time_compare, salted_hmac
 from ipware.ip import get_ip
-
 from wagtailcomments.conf import settings
 from wagtailcomments.models import CommentStatus
 from wagtailcomments.utils import get_comment_model
 
 
 class UserCommentForm(forms.ModelForm):
+    user_name = forms.CharField(required=True, max_length=254)
+    user_email = forms.CharField(required=True, max_length=255)
+
     class Meta:
         model = get_comment_model()
         fields = ['user_name', 'user_email']
